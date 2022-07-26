@@ -13,9 +13,11 @@ async function getAPIDogs () {
       height: e.height.metric,
       image: e.image.url,
       life_span: e.life_span,
-      temperaments: e.temperament
+      temperaments: e.temperament,
+      createdByMe: false
       }
     })
+    console.log(response)
     return response
 }
 
@@ -29,25 +31,26 @@ const getDBDogs = async () =>{ //buscamos la info en la DB
             attributes: []
         }
     }})
-    return DBDogs
+  if(DBDogs){
+    return DBDogs.map(e =>{
+      return {
+        id: e.id,
+        name: e.name[0].toUpperCase().concat((e.name.slice(1)).toLowerCase()),
+        weight: e.weight,
+        height: e.height,
+        image: e.image || 'https://cutt.ly/OZrrqEX',
+        temperaments: e.temperaments.map(e => e.name).join(),
+        life_span: e.life_span,
+        createdByMe: e.createdByMe
+      }
+    })
+  }
   }
 
 async function getAllDogs (){
   const DB_Dogs = await getDBDogs();
   const API_Dogs = await getAPIDogs();
-  const DogsDB = DB_Dogs.map(e =>{
-    return {
-        id: e.id,
-        name: e.name[0].toUpperCase().concat((e.name.slice(1)).toLowerCase()),
-        weight: e.weight,
-        height: e.height,
-        image: e.image || 'https://n9.cl/f09u2',
-        temperaments: e.temperaments.map(e => e.name).join(),
-        life_span: e.life_span,
-        createdInDb: e.createdInDb
-      }
-    })
-  const AllDogs = API_Dogs.concat(DogsDB);
+  const AllDogs = API_Dogs.concat(DB_Dogs);
   return AllDogs
 }
 
@@ -55,7 +58,7 @@ const getAllTemperaments = async () =>{
   const getTemps = (await axios(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)).data;
   const findTemps = await getTemps.map( e => e.temperament);
   let splitTemps = await findTemps.join().split(',')
-  splitTemps = splitTemps.map(e => e.trim())
+  splitTemps = splitTemps.map(e => e.trim()).sort()
   splitTemps = splitTemps.filter(e => e !== "")
   const setTemps = [...new Set(splitTemps)];
   setTemps.forEach(e =>{
