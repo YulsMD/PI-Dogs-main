@@ -2,33 +2,33 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { SearchDogByName } from "../../redux/actions";
 
-export default function SearchBar ({setCurrentPage}){
+export default function SearchBar (){
   const dispatch = useDispatch()
   const [name, setName] = useState("")
 
   const handleChange = (e) =>{
+    e.preventDefault()
     setName(e.target.value)
     console.log(name)
   }
 
-  const handleSubmit = (name) => {
+  const handleSubmit = (e) => {
     /* console.log(name)
     if(name.length < 3) {
      return alert('Have to complete breed')
     } else { */
-
+      e.preventDefault()
       dispatch(SearchDogByName(name))
       setName('')
-      setCurrentPage(1)
       console.log(name)
     
   }
 
   return (
-    <div>
+    <form onSubmit={e =>handleSubmit(e)}>
       <input type='text' placeholder='Search breed' value={name} onChange={e => handleChange(e)}/>
-      <button type= 'submit' onSubmit={e =>handleSubmit(e)}>🔎🐕</button>
-    </div>
+      <input type= 'submit' value='Search'/>
+    </form>
   )
 }
 

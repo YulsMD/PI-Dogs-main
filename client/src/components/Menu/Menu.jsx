@@ -2,39 +2,32 @@ import React from "react"
 import { useDispatch, useSelector} from "react-redux"
 import { filterDogsBySrc, filterDogsByTemperament, OrderDogsByWeight, getAllDogs, SortDogsAscDesc } from "../../redux/actions";
 
-export default function Menu ({setCurrentPage, setOrder}){
+export default function Menu ({setOrder}){
   const allTemperaments = useSelector(state =>state.temperaments)
   const dispatch = useDispatch();
 
   const handleRefresh = (e =>{
     dispatch(getAllDogs(e))
-    setCurrentPage(1)
   })
 
   const handleOrderByWeight = (e =>{
-    dispatch(OrderDogsByWeight(e.target.value))
-    setCurrentPage(1)
-    setOrder(`${e.target.value}`)
+    dispatch(OrderDogsByWeight(e.target.value))  
+    setOrder(e.target.value)
   })
 
   const handleOrderAscDesc = (e =>{
     dispatch(SortDogsAscDesc(e.target.value))
-    setCurrentPage(1)
-    setOrder(`${e.target.value}`)
+    setOrder(e.target.value)
   })
 
   const handleFilterSource = (e) =>{
-    e.preventDefault()
-    setCurrentPage(1)
     dispatch(filterDogsBySrc(e.target.value))
-    setOrder(`${e.target.value}`)
+    setOrder(e.target.value)
   }
 
   const handleFilterTemperaments = (e =>{
-    e.preventDefault()
-    setCurrentPage(1)
     dispatch(filterDogsByTemperament(e.target.value))
-    setOrder(`${e.target.value}`)
+    setOrder(e.target.value)
   })
   
     return (

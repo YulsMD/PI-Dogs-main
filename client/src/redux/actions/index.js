@@ -1,10 +1,10 @@
 import axios from "axios"
 
 export const getAllDogs = () =>{
-  return function(dispatch){
-    return fetch('http://localhost:3001/dogs')
-      .then(response => response.json())
-      .then(data =>dispatch({type: 'GET_ALL_DOGS', payload: data}))
+  return async function(dispatch){
+    const response = await fetch('http://localhost:3001/dogs')
+    const data = await response.json()
+    return dispatch({ type: 'GET_ALL_DOGS', payload: data })
 }
 }
 
@@ -31,6 +31,7 @@ export const SearchDogByName = (name) =>{
   return async function(dispatch) {
     try {
     const res = await axios.get(`http://localhost:3001/dogs?name=${name}`)
+    console.log(res.data)
     return dispatch ({
         type: 'GET_BY_NAME',
         payload: res.data
@@ -67,4 +68,21 @@ export function SortDogsAscDesc(payload){
     type: 'SORT_ASC_DESC',
     payload
   }
+}
+
+export function CreateNewDog(payload){
+  return async function(dispatch){
+    try {
+      const { data } = await axios.post('http://localhost:3001/dogs/post')
+      dispatch(
+        { 
+          type: 'CREATE_DOG', 
+          payload: data 
+        }
+      )
+      return alert("Dog created succesfully")
+    } catch (e) {
+      return console.log(e)
+    }
+}
 }

@@ -12,7 +12,7 @@ async function getAPIDogs () {
       weight: e.weight.metric,
       height: e.height.metric,
       image: e.image.url,
-      life_span: e.life_span,
+      life_span: e.life_span.split(" years").filter(e=> e !=="").toString(),
       temperaments: e.temperament,
       createdByMe: false
       }

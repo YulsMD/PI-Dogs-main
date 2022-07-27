@@ -6,7 +6,7 @@ export default function NavBar (){
     <React.Fragment>
       <nav>
         <li>
-          <NavLink to={'/home'}>Home</NavLink>
+          DOGS LAND
         </li>
         <li>
           <NavLink to={'/create'}>Create Dog</NavLink>
