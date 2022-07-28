@@ -92,6 +92,11 @@ const rootReducer = (state = initialState, action) => {
       ...state,
       dogs: action.payload
     }
+
+    case 'CREATE_DOG':
+      return{
+        ...state
+      }
   
     default:
       return{

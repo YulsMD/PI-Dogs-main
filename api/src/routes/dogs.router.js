@@ -33,11 +33,28 @@ router.get('/:id', async (req, res, next) =>{
 })
 
 router.post('/post', async(req,res, next) =>{
-  const {name, image, height, weight, life_span, temperaments} = req.body
-  if(!name || !height || !weight) res.json('Missing parameters')
+  const {name, image, height_min, height_max, weight_min, weight_max, life_span_min, life_span_max, temperaments} = req.body
+  if(!name || !height_min || !height_max || !weight_min || !weight_max) res.json('Missing parameters')
+  const height = height_min + " - " + height_max;
+  const weight = weight_min + " - " + weight_max;
+  let life_span = ""
+  if(life_span_min && life_span_max){
+    life_span = life_span_min + " - " + life_span_max} 
+  else if(life_span_min || life_span_max) {
+    life_span = (life_span_min ? life_span_min : life_span_max);
+  }
   try {
     const newDog = await Dog.create({ name, image, height, weight, life_span})
-    await newDog.addTemperament(temperaments);
+    if(temperaments.length){
+      if(typeof(temperaments) === "string") temperaments = temperaments.split(',');
+      const t = await Temperament.findAll({
+          where: {
+              name: temperaments.map(el => el[0].toUpperCase().concat(el.slice(1)))
+          }
+      })
+          newDog.addTemperament(t)
+  };
+    //await newDog.addTemperament(temperaments);
     res.json('Dog was created succesfully')
   } catch (error) {
       next(error)
