@@ -79,3 +79,10 @@ export function CreateNewDog(payload){
   } catch (error) {
     console.log(error)
   }}}
+
+export function clearState(){
+  return{
+    type: 'CLEAR_STATE'
+  }
+
+}

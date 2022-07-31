@@ -10,14 +10,14 @@ export default function DogDetails (){
 
     useEffect(() =>{
         dispatch(getDetails(id))
-    }, [dispatch, id])
+    }, [dispatch,id])
     return(
         <div>
             <nav>
                 <Link to='/home'><button>Home</button></Link>
             </nav>
                 <div>
-                    <img src={dog.image}/>
+                    <img src={dog.image} alt='dog-img'/>
                     <h2>{dog.name}</h2>
                     <p>Height: {dog.height} cm</p>
                     <p>Weight: {dog.weight} kg</p>

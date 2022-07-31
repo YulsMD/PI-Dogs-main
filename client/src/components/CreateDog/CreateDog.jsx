@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { CreateNewDog, getAllDogs, getAllTemperaments } from "../../redux/actions";
 import validations from "./validations";
-
+import Dog_1 from '../../images/Dog_1.jpg'
+import Dog_2 from '../../images/Dog_2.jpg'
+import Dog_3 from '../../images/Dog_3.jpg'
 
 export default function CreateDog (){
-  const allDogs =useSelector(state => state.dogs)
+  const allDogs = useSelector(state => state.dogs)
   const allTemperaments = useSelector(state=>state.temperaments)
   const [errors, setErrors] = useState({})
   const [input, setInput] = useState({
@@ -25,6 +27,7 @@ export default function CreateDog (){
 
   useEffect(()=>{
     dispatch(getAllTemperaments())
+    dispatch(getAllDogs())
   },[dispatch]) 
 
   function handleChange(e){
@@ -36,7 +39,7 @@ export default function CreateDog (){
         ...input,
         [e.target.name]: e.target.value
       }))
-    }
+  }
 
   function handleTemperaments(e){
     if(input.temperaments === "") setInput({...input, temperaments: []})
@@ -59,9 +62,45 @@ export default function CreateDog (){
     })
   }
 
+  function selectImage(e){
+    if(!input.image){
+      console.log(e.target.value)
+      setInput({...input,
+        image: e.target.value})
+    }
+    if(input.image){
+      setInput({image: ''})
+      console.log(e.target.value)
+      setInput({...input,
+        image: e.target.value})
+    }
+  }
+
   const handleSubmit = (e) =>{
     e.preventDefault();
-    dispatch(CreateNewDog(input))
+    const existeName = allDogs.filter(e => e.name.toLowerCase() === input.name.toLowerCase())
+    if(existeName.length){ return alert('Dog already exists') }
+    else{
+      if(!input.name || !input.height_min || !input.height_max || !input.weight_max || !input.weight_min  || !input.life_span_min || !input.life_span_max || input.temperaments.length === 0) {
+        alert('Complete all options')
+      } else if (errors.name || errors.height_min || errors.height_max || errors.weight_max || errors.weight_min || errors.life_span || errors.temperaments) {
+        alert('incorrect data')
+      } else{
+        dispatch(CreateNewDog(input))
+        alert('Dog created succesfully')
+        setInput(
+          {name: '',
+          image: '',
+          height_min: '',
+          height_max: '',
+          weight_min: '',
+          weight_max: '',
+          life_span_min: '',
+          life_span_max: '',
+          temperaments: []}
+          )
+      }
+    }
   } 
 
   return(
@@ -109,6 +148,29 @@ export default function CreateDog (){
           {<span>{errors.life_span_max}</span>}
         </div>
         <div>
+          <label>Image:</label>
+          <input type="text" name="image" value={input.image} onChange={handleChange}/>
+          {<span>{errors.image}</span>}
+          <div>
+            <img height="200" src={Dog_1} alt='DogOne'/>
+            <button type='button' value={Dog_1} onClick={selectImage}>
+              one
+            </button>
+          </div>
+          <div>
+            <img height="200" src={Dog_2} alt='DogTwo'/>
+            <button type='button' value={Dog_2} onClick={selectImage}>
+              two
+            </button>
+          </div>
+          <div>
+            <img height="200" src={Dog_3} alt='DogThree'/>
+            <button type='button' value={Dog_3} onClick={selectImage}>
+              three
+            </button>
+          </div>
+        </div>
+        <div>
           <label>Temperaments:</label>
           <select onChange={handleTemperaments}>
             {
@@ -128,10 +190,6 @@ export default function CreateDog (){
               </div>
             )
           }
-        </div>
-        <div>
-          <label>Image:</label>
-          <input type="text" name="image" value={input.image} onChange={handleChange}/>
         </div>
         <button type="submit">CREATE</button>
       </form>

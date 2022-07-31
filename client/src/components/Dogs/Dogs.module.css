@@ -1,0 +1,15 @@
+.loader{
+  position: absolute;
+  right: 900px;
+  bottom: 360px;
+}
+
+.container{
+  display: flex;
+  margin: auto;
+  width: 100%;
+  gap: 40px;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+}

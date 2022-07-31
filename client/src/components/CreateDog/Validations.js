@@ -1,4 +1,4 @@
-export default function validations({name , weight_min, weight_max, height_min, height_max, life_span_min, life_span_max, temperaments}){
+export default function validations({name , weight_min, weight_max, height_min, height_max, life_span_min, life_span_max, temperaments, image}){
   let error = {}
   if(!name){error.name= 'Should to insert name'}
   else if(!/^([a-zñáéíóúA-Z][^\d@+.,-_{}]+[\s]?)+$/.test(name)){

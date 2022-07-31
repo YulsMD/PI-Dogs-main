@@ -32,7 +32,7 @@ const rootReducer = (state = initialState, action) => {
       : allDogs.filter(e => e.createdByMe.toString() === action.payload)
       return {
         ...state,
-        dogs: sourceFiltered
+        dogs: sourceFiltered.map(e=>e)
       }
 
     case 'FILTER_BY_TEMPERAMENT':
@@ -96,6 +96,12 @@ const rootReducer = (state = initialState, action) => {
     case 'CREATE_DOG':
       return{
         ...state
+      }
+    
+    case 'CLEAR_STATE':
+      return{
+        ...state,
+        details:[]
       }
   
     default:
