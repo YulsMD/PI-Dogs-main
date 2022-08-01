@@ -29,7 +29,7 @@
    .title{
     display: flex;
     height: 80px;
-    width: 262px;
+    width: 300px;
     font-family: 'Rampart One', cursive;
     background-image: url(https://media.giphy.com/media/jkqzt6Xy7tss9I3qJ3/giphy.gif);
 	  background-size: cover;
@@ -46,10 +46,28 @@
     justify-content: center;
     text-align: center;
    }
-   .div{
-    display: flex;
+   .div_cont{
+     display: flex;
+     flex-direction: column;
    }
-   
+   .div_temp{
+    margin: auto;
+     font-family: 'Mouse Memoirs', sans-serif;
+     color: #81f0c5;
+     display: flex;
+     gap: 20px;
+     font-size: 20px;
+     justify-content: center;
+     padding: 5px;
+     font: bold;  
+     text-align: center;
+    align-items: center;
+   }
+   .div_img{
+    height: auto;
+    display: flex;
+    justify-content: center;
+   }
    .image img{
      border-radius: 50px;
      margin: auto;
@@ -74,15 +92,16 @@
    }
 
    .divWeight{
+     margin: 0;
      font-family: 'Mouse Memoirs', sans-serif;
      color: #81f0c5;
      display: flex;
      gap: 20px;
      font-size: 20px;
      justify-content: center;
-     padding: 5px;
      font: bold;  
      text-align: center;
+     height: 40px;
    }
 
    .effect div{

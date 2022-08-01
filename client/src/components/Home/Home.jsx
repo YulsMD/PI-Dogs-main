@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Dogs from '../Dogs/Dogs';
-import SearchBar  from "../SearchBar/SearchBar";
 import s from '../Home/Home.module.css'
 import Paginated from "../Paginated/Paginated";
 import Menu from "../Menu/Menu";
@@ -26,7 +25,6 @@ const Home = () =>{
         <div className={s.navbar}>
           <NavBar/>
         </div>
-          <SearchBar/>
           <div className={s.container2}>
             <div className={s.menu}>
               <Menu setOrder = {setOrder} setCurrentPage={setCurrentPage}/>

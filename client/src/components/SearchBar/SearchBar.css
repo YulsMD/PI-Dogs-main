@@ -1,15 +1,15 @@
-* {
-	border: 0;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
+/* * {
+	
+
+} */
 .body, button, .input {
 	font: 1em Hind, sans-serif;
 	line-height: 1.5em;
 }
 .input {
-	color: #171717;
+	color: #81f0c5;
+  font-family: 'Mouse Memoirs', sans-serif;
+  text-transform: uppercase;
 }
 .search-bar {
 	display: flex;
@@ -19,6 +19,11 @@
 .search-btn:before, 
 .search-btn:after {
   transition: all 0.25s ease-out;
+
+  border: 0;
+  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 .search-bar .input,
 .search-btn {
@@ -41,8 +46,8 @@
 .search-bar {
   margin: auto;
   padding: 1.5em;
-  justify-content: center;
-  max-width: 30em;
+  justify-content: right;
+  max-width: 28em;
 }
 .search-bar .input {
   background: transparent;

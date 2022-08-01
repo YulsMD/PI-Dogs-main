@@ -21,9 +21,10 @@
 }
 
 .navbar{
-  background-color: rgba(9, 255, 0, 0.945);
-  padding: 15px;
+  padding: 5px;
   border-radius: 10px;
+  justify-content: center;
+  display: flex;
 }
 .menu{
   padding: 15px;
