@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Rampart+One&display=swap');
 
+.container{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.container2{
+  display: flex;
+  justify-content: center;
+}
+
 .bannerImg{
     background-image: url('../../images/BGLanding.gif');
     min-height: 100%;

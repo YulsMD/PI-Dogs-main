@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Rampart+One&display=swap');
+.body {
+  background-image: url("../../images/BGDetails.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  gap: 300px;
+  justify-content: center;
+  height: 900px;
+  align-items: center;
+}
+
+.blur {
+  background: transparent;
+  height: 100vh;
+  backdrop-filter: blur(4px);
+  position: relative;
+}
+
+.nav {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  align-items: right(100px);
+  margin: 30px;
+  align-items: flex-end;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+}
+.container_f_b{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  margin: 200px;
+}
+.container_front{
+  width: 400px;
+  height: 550px;
+  position: relative;
+  -webkit-transition: all 0.4s cubic-bezier(0, 0.045, 0.355, 1);
+  transition: all 0.4s cubic-bezier(0, 0.045, 0.355, 1);
+  border-radius: 1em;
+  -webkit-box-shadow: 0 0 20px 8px #81f0c5;
+          box-shadow: 0 0 20px 8px #81f0c5;
+}
+
+.div_img{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background: #81f0c570;
+  background: linear-gradient(to top, #81f0c575, #81f0c54f);
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  
+}
+
+.div_img img{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 20px 10px #81f0c5;
+          box-shadow: 0 0 20px 10px #81f0c5;
+}
+
+.card_description {
+display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ position: absolute;
+ gap: 1em;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+         flex-direction: column;
+ background-color: #25554b;
+ width: 92%;
+ height: 70%;
+ bottom: 0;
+ border-radius: 1em 1em 1em 1em;
+ -webkit-transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+ transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+ padding: 1rem;
+ }
+
+ .container_front:hover .card_description{
+ -webkit-transform: translateY(100%);
+ -ms-transform: translateY(100%);
+     transform: translateY(100%);
+     display:none;
+ }
+
+ .title{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  font-family: 'Rampart One', cursive;
+  background-image: url(https://media.giphy.com/media/jkqzt6Xy7tss9I3qJ3/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  background-clip: text;
+  font-size: 20px;
+  font:bold;
+ }
+
+ .title h2{
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+ }
+
+ .divWeight{
+  margin: 0;
+  font-family: 'Mouse Memoirs', sans-serif;
+  color: #81f0c5;
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  justify-content: center;
+  font: bold;  
+  text-align: center;
+  height: 40px;
+}
