@@ -4,6 +4,7 @@ import {getAllDogs, getAllTemperaments } from "../../redux/actions";
 import DogCard from '../DogCard/DogCard';
 import Loader from "../Loader/Loader";
 import s from '../Dogs/Dogs.module.css'
+import NotFound from "../NotFound/NotFound";
 
 
 export default function Dogs({currentDogs}){
@@ -22,7 +23,7 @@ export default function Dogs({currentDogs}){
     {
     loader
     ? <div className={s.loader}><Loader/></div>
-    : (
+    :(
         <div className={s.container}>
           {
             currentDogs?.map(dog => {
@@ -35,7 +36,7 @@ export default function Dogs({currentDogs}){
                 image = {dog.image}
               />
             })
-          }
+            }
         </div>
       )
     }

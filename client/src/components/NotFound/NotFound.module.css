@@ -1,0 +1,19 @@
+.body {
+    background-image: url("../../images/NotFoundBG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container{
+      display: flex;
+      align-items: center;
+      height: 70%;
+      width: 100vh;
+      justify-content: flex-end;
+      padding: 50px;
+  }

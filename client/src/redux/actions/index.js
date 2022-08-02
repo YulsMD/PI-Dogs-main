@@ -37,7 +37,7 @@ export const SearchDogByName = (name) =>{
         payload: res.data
     })
     } catch (error) {
-        console.log(error)
+        alert('Dog not found')
     }
   } 
 }

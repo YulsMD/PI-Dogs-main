@@ -21,8 +21,7 @@ export default function SearchBar (){
       e.preventDefault()
       dispatch(SearchDogByName(name))
       setName('')
-      console.log(name)
-    
+      console.log(name)  
   }
 
   return (

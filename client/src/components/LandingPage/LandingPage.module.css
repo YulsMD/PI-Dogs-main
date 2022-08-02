@@ -1,26 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Rampart+One&display=swap');
 
-.container{
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-}
-
-.container2{
-  display: flex;
-  justify-content: center;
-}
-
-.bannerImg{
+.body{
     background-image: url('../../images/BGLanding.gif');
-    min-height: 100%;
-    min-width: 1024px;
-    width: 100%;
-    height: fit-content;
+    background-repeat: no-repeat;
     background-size: cover;
-    position:absolute;
-    filter: blur(3px);
+    background-position: center center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
+
+.blur {
+  background: transparent;
+  height: 100vh;
+  backdrop-filter: blur(4px);
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+.container_btn{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
 
 .button {
   position: relative;
@@ -122,12 +133,6 @@
   transition-delay: none;
  }
 
- .buttonAligne{
-  position: absolute;
-  right: 970px;
-  bottom: 400px;
- }
-
 .h1 {
 	background-image: url(https://media.giphy.com/media/RIFr5Mcb2Q4jS/giphy.gif);
 	background-size: cover;
@@ -142,10 +147,5 @@
   filter: opacity(0.9);
   transform: skew(2deg, 2deg);
   padding: 20px;
-}
-
-.aligneh1{
-  position: absolute;
-  right: 810px;
-  bottom: 200px;
+  text-align: center;
 }

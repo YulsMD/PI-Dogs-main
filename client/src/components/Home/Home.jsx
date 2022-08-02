@@ -20,12 +20,12 @@ const Home = () =>{
     setCurrentPage(pageNumber)
   }
   return (
-    <div className={s.background}>
+    <div className={s.body}>
       <div className={s.container}>
-        <div className={s.navbar}>
+        <div className={s.nav}>
           <NavBar/>
         </div>
-          <div className={s.container2}>
+          <div className={s.container_menu_dogs}>
             <div className={s.menu}>
               <Menu setOrder = {setOrder} setCurrentPage={setCurrentPage}/>
             </div>

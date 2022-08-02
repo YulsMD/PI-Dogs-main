@@ -88,6 +88,7 @@ const rootReducer = (state = initialState, action) => {
     }
 
     case 'GET_BY_NAME':
+      if(typeof(action.payload) === 'string') return alert('Dog not found')
     return{
       ...state,
       dogs: action.payload
