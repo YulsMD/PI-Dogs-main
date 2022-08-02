@@ -54,6 +54,7 @@
   border-radius: 1em;
   -webkit-box-shadow: 0 0 20px 8px #81f0c5;
           box-shadow: 0 0 20px 8px #81f0c5;
+  box-sizing: border-box;
 }
 
 .div_img{
@@ -89,21 +90,54 @@ display: -webkit-box;
      -ms-flex-direction: column;
          flex-direction: column;
  background-color: #25554b;
- width: 92%;
- height: 70%;
+ width: 100%;
+ height: 100%;
  bottom: 0;
  border-radius: 1em 1em 1em 1em;
  -webkit-transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
  padding: 1rem;
+ box-sizing: border-box;
  }
+.container_front::after,
+.container_front::before,
+.card_description::before,
+.card_description::after
+.container_desc::after,
+.container_desc::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all .4s;
+}
 
- .container_front:hover .card_description{
- -webkit-transform: translateY(100%);
- -ms-transform: translateY(100%);
-     transform: translateY(100%);
-     display:none;
- }
+.container_front:hover::before .card_description::before{
+  font-size: 10px;
+  transition: all .4s;
+  -webkit-transform: translate(5%, 20%);
+  transform: translate(5%, 20%);
+  text-transform: translate(5%, 20%) ;
+}
+.container_front:hover:after .card_description::after{
+  transition: all .4s;
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+ .container_front:hover .card_description {
+ -webkit-transform: translate(5%, 20%);
+     transform: translate(5%, 20%);
+     text-transform: translate(5%, 20%) ;
+     font-size: 8px;
+     width: 30%;
+     height: 30%;
+     transition: all .4s;
+    }
+  
 
  .title{
   display: flex;
@@ -117,6 +151,7 @@ display: -webkit-box;
   background-clip: text;
   font-size: 20px;
   font:bold;
+  font-size: 100%;justify-content: center;
  }
 
  .title h2{
@@ -127,14 +162,24 @@ display: -webkit-box;
  }
 
  .divWeight{
-  margin: 0;
   font-family: 'Mouse Memoirs', sans-serif;
+  width: 100%;
+  height: 40px;
   color: #81f0c5;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   font-size: 20px;
   justify-content: center;
-  font: bold;  
-  text-align: center;
+  font: bold;
   height: 40px;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+.divWeight p{
+  margin: 2px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

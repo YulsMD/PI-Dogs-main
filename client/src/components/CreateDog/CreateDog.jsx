@@ -132,85 +132,107 @@ export default function CreateDog() {
       <div className={s.blur}>
         <div className={s.container}>
           <div className={s.nav}>
-          <nav>
             <Link to="/home">
               <button>Home</button>
             </Link>
-          </nav>
           </div>
           <div>
             <h2>CREATE YOUR OWN BREED DOG</h2>
           </div>
-          <form onSubmit={handleSubmit}>
-            <div>
+          <form onSubmit={handleSubmit} className={s.form}>
+            <div className={s.container_first_row}>
               <label>Name:</label>
-              <input
-                type="text"
-                name="name"
-                value={input.name}
-                onChange={handleChange}
-              />
-              {<span>{errors.name}</span>}
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  value={input.name}
+                  onChange={handleChange}
+                  className={s.inputs}
+                />
+                {<span>{errors.name}</span>}
+              </div>
+              <div>
+                <div>
+                  <button type="submit">CREATE</button>
+                </div>
+              </div>
             </div>
             <div>
               <label>Weight min:</label>
-              <input
-                type="text"
-                name="weight_min"
-                value={input.weight_min}
-                onChange={handleChange}
-              />
-              {<span>{errors.weight_min}</span>}
-            </div>
-            <div>
+              <div>
+                <input
+                  type="text"
+                  name="weight_min"
+                  value={input.weight_min}
+                  onChange={handleChange}
+                />
+                {<span>{errors.weight_min}</span>}
+              </div>
               <label>Weight max:</label>
-              <input
-                type="text"
-                name="weight_max"
-                value={input.weight_max}
-                onChange={handleChange}
-              />
-              {<span>{errors.weight_max}</span>}
+              <div>
+                <div>
+                  <input
+                    type="text"
+                    name="weight_max"
+                    value={input.weight_max}
+                    onChange={handleChange}
+                  />
+                </div>
+                {<span>{errors.weight_max}</span>}
+              </div>
             </div>
             <div>
-              <label>Height min:</label>
-              <input
-                type="text"
-                name="height_min"
-                value={input.height_min}
-                onChange={handleChange}
-              />
-              {<span>{errors.height_min}</span>}
+              <div>
+                <label>Height min:</label>
+                <div>
+                  <input
+                    type="text"
+                    name="height_min"
+                    value={input.height_min}
+                    onChange={handleChange}
+                  />
+                </div>
+                {<span>{errors.height_min}</span>}
+              </div>
+              <div>
+                <label>Height max:</label>
+                <div>
+                  <input
+                    type="text"
+                    name="height_max"
+                    value={input.height_max}
+                    onChange={handleChange}
+                  />
+                </div>
+                {<span>{errors.height_max}</span>}
+              </div>
             </div>
             <div>
-              <label>Height max:</label>
-              <input
-                type="text"
-                name="height_max"
-                value={input.height_max}
-                onChange={handleChange}
-              />
-              {<span>{errors.height_max}</span>}
-            </div>
-            <div>
-              <label>Life span min:</label>
-              <input
-                type="text"
-                name="life_span_min"
-                value={input.life_span_min}
-                onChange={handleChange}
-              />
-              {<span>{errors.life_span_min}</span>}
-            </div>
-            <div>
-              <label>Life span max:</label>
-              <input
-                type="text"
-                name="life_span_max"
-                value={input.life_span_max}
-                onChange={handleChange}
-              />
-              {<span>{errors.life_span_max}</span>}
+              <div>
+                <label>Life span min:</label>
+                <div>
+                  <input
+                    type="text"
+                    name="life_span_min"
+                    value={input.life_span_min}
+                    onChange={handleChange}
+                  />
+                </div>
+                {<span>{errors.life_span_min}</span>}
+              </div>
+              <div>
+                <label>Life span max:</label>
+                <div>
+                  <input
+                    type="text"
+                    name="life_span_max"
+                    value={input.life_span_max}
+                    onChange={handleChange}
+                  />
+                </div>
+                {<span>{errors.life_span_max}</span>}
+              </div>
             </div>
             <div>
               <label>Image:</label>
@@ -220,11 +242,10 @@ export default function CreateDog() {
                 value={input.image}
                 onChange={handleChange}
               />
-              {<span>{errors.image}</span>}
               <div>
                 <img height="200" src={Dog_1} alt="DogOne" />
                 <button type="button" value={Dog_1} onClick={selectImage}>
-                  one
+                  ONE
                 </button>
               </div>
               <div>
@@ -242,15 +263,17 @@ export default function CreateDog() {
             </div>
             <div>
               <label>Temperaments:</label>
-              <select onChange={handleTemperaments}>
-                {allTemperaments?.map((e) => {
-                  return (
-                    <option value={e.name} key={e.id}>
-                      {e.name}
-                    </option>
-                  );
-                })}
-              </select>
+              <div>
+                <select onChange={handleTemperaments}>
+                  {allTemperaments?.map((e) => {
+                    return (
+                      <option value={e.name} key={e.id}>
+                        {e.name}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
             </div>
             <div>
               {input.temperaments?.map((e) => (
@@ -266,7 +289,6 @@ export default function CreateDog() {
                 </div>
               ))}
             </div>
-            <button type="submit">CREATE</button>
           </form>
         </div>
       </div>
