@@ -18,7 +18,7 @@ export default function DogDetails() {
       <div className={s.blur}>
         <div className={s.container}>
           <nav className={s.nav}>
-            <div className={s.logo_cont}>
+            <div >
               <Link to="/home">
                 <img src={DogHome} className={s.logo} />
               </Link>
