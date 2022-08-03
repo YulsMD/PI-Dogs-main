@@ -12,7 +12,7 @@ router.get('/', async (req, res, next) =>{
         const dogByName = allDataDogs.filter(e => e.name.toLowerCase().includes(name.toLowerCase()));
         dogByName.length ? res.json(dogByName) : res.json('Dog not found')
       }else{
-        res.json(allDataDogs)
+        res.status(200).json(allDataDogs)
       }
     } catch (error) {
         next(error)
@@ -26,7 +26,7 @@ router.get('/:id', async (req, res, next) =>{
       if (id){
         const dogByID = allDataDogs.find( e => (e.id == (id)))
         dogByID ? res.json(dogByID) : res.json('ID not exists')
-      } else{res.json(allDataDogs)}
+      } else{res.status(200).json(allDataDogs)}
     } catch (error) {
       next(error)
     }
@@ -55,7 +55,7 @@ router.post('/post', async(req,res, next) =>{
           newDog.addTemperament(t)
   };
     //await newDog.addTemperament(temperaments);
-    res.json('Dog was created succesfully')
+    res.status(200).json('Dog was created succesfully')
   } catch (error) {
       next(error)
   }
