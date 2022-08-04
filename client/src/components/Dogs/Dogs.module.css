@@ -1,7 +1,12 @@
 .loader{
   position: absolute;
-  right: 900px;
-  bottom: 360px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  right: 0px;
+  align-items: center;
+  top: 50px;
 }
 
 .container{

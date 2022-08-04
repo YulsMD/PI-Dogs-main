@@ -40,9 +40,8 @@ const rootReducer = (state = initialState, action) => {
       state.allDogs?.filter(e=>{
         if(typeof(e.temperaments)=== 'string') return e.temperaments.includes(action.payload);
         if(Array.isArray(e.temperaments)){
-         let temps = e.temperaments.map(e=>e.name)
-         return temps.includes(action.payload)
-        }
+         var temps = e.temperaments.map(e=>e.name).includes(action.payload)
+        }return temps
       })
       return{
         ...state,

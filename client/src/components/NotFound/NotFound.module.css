@@ -7,6 +7,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    filter: saturate(1.2);
   }
 
   .container{
@@ -16,4 +17,11 @@
       width: 100vh;
       justify-content: flex-end;
       padding: 50px;
+      flex-direction: column;
+  }
+  .blur {
+    background: transparent;
+    height: 100vh;
+    backdrop-filter: blur(3px);
+    position: relative;
   }

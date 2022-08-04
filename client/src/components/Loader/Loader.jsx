@@ -9,6 +9,9 @@ export default class Loader extends React.Component{
         <div className={s.face}>
           <div className={s.circle}></div>
         </div>
+        {
+          console.log('Holaa!')
+        }
         <div className={s.face}>
           <div className={s.circle}></div>
         </div>

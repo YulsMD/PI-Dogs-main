@@ -2,7 +2,7 @@
 const { expect } = require("chai");
 const session = require("supertest-session");
 const app = require("../../src/app.js");
-const { Dog, conn } = require("../../src/db.js");
+const { Dog, Temperament, conn } = require("../../src/db.js");
 
 
 const agent = session(app);
@@ -10,8 +10,9 @@ const dog = {
   name: "Pato",
   weight: "14 - 16" ,
   height: "23 - 29",
-  life_span: "10 -14",
+  life_span: "10 -14"
 };
+const temps=[1,6,8,9]
 
 describe("Get Dogs routes", () => {
   before(() =>
@@ -35,17 +36,24 @@ describe("Get Dogs routes", () => {
     });
   });
 
+  describe("GET /dogs/temperaments", () => {
+    it("should get 200", () => agent.get("/temperaments").expect(200));
+    it('espera que sea html', function(){
+      return agent.get('/')
+        .expect('Content-Type', /html/);
+    });
+  });
+
 
   describe('POST /dogs/post', function () {
     it('responde con 200', function(){
-      return agent.post('/dogs/post')
+      agent.post('/dogs/post')
         .send({
           name: "Perritu",
           weight: "50 - 56", 
           height: "35 -40",
           image: "", 
-          life_span: "5-10",
-          temperaments: [1,56,24,13]
+          life_span: "5-10"
         })
         .expect(200);
     });

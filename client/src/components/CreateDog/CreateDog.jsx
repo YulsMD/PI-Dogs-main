@@ -17,6 +17,7 @@ export default function CreateDog() {
   const allDogs = useSelector((state) => state.dogs);
   const allTemperaments = useSelector((state) => state.temperaments);
   const [errors, setErrors] = useState({});
+  const [disabled, setDisabled] = useState(false);
   const [input, setInput] = useState({
     name: "",
     weight_min: "",
@@ -99,7 +100,9 @@ export default function CreateDog() {
         !input.life_span_max ||
         input.temperaments.length === 0
       ) {
+        
         alert("Complete all options");
+        setDisabled(true);
       } else if (
         errors.name ||
         errors.height_min ||
@@ -109,9 +112,11 @@ export default function CreateDog() {
         errors.life_span ||
         errors.temperaments
       ) {
+        setDisabled(true);
         alert("incorrect data");
       } else {
         dispatch(CreateNewDog(input));
+        setDisabled(false);
         alert("Dog created succesfully");
         setInput({
           name: "",
@@ -135,7 +140,7 @@ export default function CreateDog() {
           <div className={s.nav}>
           <div className={s.container2}>
               <Link to="/home">
-                <img src={Logo} className={s.logo} />
+                <img alt='bg-button' src={Logo} className={s.logo} />
               </Link>
             </div>
             <div className={s.background_title}>
@@ -286,6 +291,7 @@ export default function CreateDog() {
                         key={e}
                         value={e}
                         onClick={() => handleDelete(e)}
+                        disabled={disabled}
                         className={s.button}
                       >
                         {e}

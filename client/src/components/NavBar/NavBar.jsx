@@ -10,7 +10,7 @@ export default function NavBar() {
       <nav className={s.container}>
         <div className={s.logo_cont}>
           <NavLink to="/">
-            <img src={Logo} className={s.logo} />
+            <img alt="bg-button" src={Logo} className={s.logo} />
           </NavLink>
         </div>
         <div className={s.cont_btn}>

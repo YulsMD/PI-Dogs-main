@@ -5,18 +5,17 @@ import { Link } from "react-router-dom";
 export default function NotFound() {
   return (
     <div className={s.body}>
-      <div className={s.container}>
-        <div>
+      <div className={s.blur}>
+        <div className={s.container}>
           <div>
-            You shouldn't have come here, we're on the wrong track.
+            <div>Is dangerous stay here</div>
           </div>
           <div>
-            Go back to Dog's Land as soon as possible
+            <Link to="/">
+              <button>BACK</button>
+            </Link>
           </div>
         </div>
-        <Link to="/">
-          <button>Get back on track</button>
-        </Link>
       </div>
     </div>
   );

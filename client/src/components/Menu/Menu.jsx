@@ -8,15 +8,18 @@ export default function Menu ({setOrder, setCurrentPage}){
   const dispatch = useDispatch();
 
   const handleRefresh = (e =>{
+    setCurrentPage(1)
     dispatch(getAllDogs(e))
   })
 
   const handleOrderByWeight = (e =>{
+    setCurrentPage(1)
     dispatch(OrderDogsByWeight(e.target.value))  
     setOrder(e.target.value)
   })
 
   const handleOrderAscDesc = (e =>{
+    setCurrentPage(1)
     dispatch(SortDogsAscDesc(e.target.value))
     setOrder(e.target.value)
   })
@@ -28,6 +31,7 @@ export default function Menu ({setOrder, setCurrentPage}){
   }
 
   const handleFilterTemperaments = (e =>{
+    setCurrentPage(1)
     dispatch(filterDogsByTemperament(e.target.value))
     setOrder(e.target.value)
   })
