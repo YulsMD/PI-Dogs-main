@@ -103,7 +103,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         details:[]
       }
-  
+      
     default:
       return{
         ...state

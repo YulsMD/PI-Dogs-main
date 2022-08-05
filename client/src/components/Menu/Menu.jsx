@@ -1,6 +1,6 @@
 import React from "react"
 import { useDispatch, useSelector} from "react-redux"
-import { filterDogsBySrc, filterDogsByTemperament, OrderDogsByWeight, getAllDogs, SortDogsAscDesc } from "../../redux/actions";
+import { filterDogsBySrc, filterDogsByTemperament, OrderDogsByWeight, getAllDogs, SortDogsAscDesc} from "../../redux/actions";
 import s from '../Menu/Menu.module.css'
 
 export default function Menu ({setOrder, setCurrentPage}){

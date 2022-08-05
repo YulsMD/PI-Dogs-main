@@ -7,12 +7,12 @@ export default function NotFound() {
     <div className={s.body}>
       <div className={s.blur}>
         <div className={s.container}>
-          <div>
-            <div>Is dangerous stay here</div>
+          <div className={s.text}>
+            <div>We're working...</div>
           </div>
           <div>
             <Link to="/">
-              <button>BACK</button>
+              <button className={s.button}>BACK</button>
             </Link>
           </div>
         </div>

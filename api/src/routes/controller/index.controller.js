@@ -25,12 +25,9 @@ const getDBDogs = async () =>{ //buscamos la info en la DB
   
   const DBDogs = await Dog.findAll({
     include: {
-        model: Temperament,
-        attributes: ['name'],
-        through: {
-            attributes: []
-        }
+        model: Temperament
     }})
+    
   if(DBDogs){
     return DBDogs.map(e =>{
       return {

@@ -1,16 +1,10 @@
 import axios from "axios"
 
 export const getAllDogs = () =>{
-  /* return async function(dispatch){
-    const response = await fetch('http://localhost:3001/dogs')
-    const data = await response.json()
-    return dispatch({ type: 'GET_ALL_DOGS', payload: data })
-} */
-return function(dispatch){fetch('http://localhost:3001/dogs')
-.then(response =>response.json())
-.then(data =>dispatch({
-  type: 'GET_ALL_DOGS', payload: data
-}))
+return function(dispatch){
+  axios.get('http://localhost:3001/dogs').then(response=>dispatch({
+    type: 'GET_ALL_DOGS', payload: response.data
+  }))
 }}
 
 export const getAllTemperaments = () =>{
