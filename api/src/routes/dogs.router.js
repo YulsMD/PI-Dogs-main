@@ -2,7 +2,7 @@ const axios  = require("axios");
 const express = require('express');
 const router = express.Router();
 const {Dog, Temperament} = require ('../db.js')
-const {getAllDogs} = require ('./controller/index.controller.js')
+const {getAllDogs, getWeightDogs} = require ('./controller/index.controller.js')
 
 router.get('/', async (req, res, next) =>{
   const {name} = req.query;
@@ -14,6 +14,15 @@ router.get('/', async (req, res, next) =>{
       }else{
         res.status(200).json(allDataDogs)
       }
+    } catch (error) {
+        next(error)
+    } 
+}) 
+router.get('/weight', async (req, res, next) =>{
+    try {
+      const allDataDogs = await getWeightDogs();
+      const filter = allDataDogs?.filter(e=>e.weigth[0]>40)
+        res.status(200).json(filter)
     } catch (error) {
         next(error)
     } 

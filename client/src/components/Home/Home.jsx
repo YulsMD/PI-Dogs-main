@@ -5,6 +5,7 @@ import Paginated from "../Paginated/Paginated";
 import Menu from "../Menu/Menu";
 import { useSelector } from "react-redux";
 import NavBar from '../NavBar/NavBar'
+import SearchBar from "../SearchBar/SearchBar";
 
 const Home = () =>{
   let allDogs = useSelector(state => state.dogs);
@@ -23,7 +24,10 @@ const Home = () =>{
     <div className={s.body}>
       <div className={s.container}>
         <div className={s.nav}>
-          <NavBar/>
+          <NavBar setCurrentPage={setCurrentPage} paginated={paginated}/>
+        </div>
+        <div className={s.searchbar}>
+          <SearchBar setCurrentPage={setCurrentPage} paginated={paginated}/>
         </div>
           <div className={s.container_menu_dogs}>
             <div className={s.menu}>

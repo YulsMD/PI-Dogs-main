@@ -20,6 +20,18 @@ async function getAPIDogs () {
     console.log(response)
     return response
 }
+async function getWeightDogs () {
+  const getDataURL = (await axios(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)).data;
+  const response = await getDataURL.map(e =>{
+    return {
+      name: e.name,
+      weigth: e.weight.metric.split(' - '),
+      createdByMe: false
+      }
+    })
+    console.log(response)
+    return response
+}
 
 const getDBDogs = async () =>{ //buscamos la info en la DB
   
@@ -68,5 +80,5 @@ const getAllTemperaments = async () =>{
 
 
 module.exports = {
-    getAllDogs, getAllTemperaments
+    getAllDogs, getAllTemperaments, getWeightDogs
 }

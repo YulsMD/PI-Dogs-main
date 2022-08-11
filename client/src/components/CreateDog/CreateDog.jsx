@@ -17,7 +17,6 @@ export default function CreateDog() {
   const allDogs = useSelector((state) => state.dogs);
   const allTemperaments = useSelector((state) => state.temperaments);
   const [errors, setErrors] = useState({});
-  const [disabled, setDisabled] = useState(true);
   const [input, setInput] = useState({
     name: "",
     weight_min: "",
@@ -59,7 +58,6 @@ export default function CreateDog() {
         ...input,
         temperaments: [...input.temperaments, e.target.value],
       });
-      console.log(e);
     }
   }
 
@@ -72,12 +70,10 @@ export default function CreateDog() {
 
   function selectImage(e) {
     if (!input.image) {
-      console.log(e.target.value);
       setInput({ ...input, image: e.target.value });
     }
     if (input.image) {
       setInput({ image: "" });
-      console.log(e.target.value);
       setInput({ ...input, image: e.target.value });
     }
   }
@@ -90,15 +86,12 @@ export default function CreateDog() {
     if (existeName.length) {
       return alert("Dog already exists");
     } else {
-      if (!Object.keys(input).length || input.temperaments.length===0) {
+      if (!Object.keys(input).length || input.temperaments.length === 0) {
         alert("Complete all options");
-        setDisabled(true);
-      } else if (Object.keys(errors).lenght) {
-        setDisabled(true);
+      } else if (Object.keys(errors).length) {
         alert("incorrect data");
       } else {
         dispatch(CreateNewDog(input));
-        setDisabled(false);
         alert("Dog created succesfully");
         setInput({
           name: "",
@@ -273,7 +266,6 @@ export default function CreateDog() {
                       key={e}
                       value={e}
                       onClick={() => handleDelete(e)}
-                      disabled={disabled}
                       className={s.button}
                     >
                       {e}

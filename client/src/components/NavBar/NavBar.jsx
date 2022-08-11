@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import s from "../NavBar/NavBar.module.css";
-import SearchBar from "../SearchBar/SearchBar";
 import Logo from "../../images/Home_1.png";
 
 export default function NavBar() {
@@ -23,9 +22,6 @@ export default function NavBar() {
               Create Dog
             </button>
           </NavLink>
-        </div>
-        <div className={s.searchbar}>
-          <SearchBar />
         </div>
       </nav>
     </React.Fragment>

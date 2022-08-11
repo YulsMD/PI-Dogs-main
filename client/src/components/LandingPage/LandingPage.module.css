@@ -4,8 +4,6 @@
     background-image: url('../../images/BGLanding.gif');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
-    height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -16,20 +14,21 @@
   height: 100vh;
   backdrop-filter: blur(4px);
   position: relative;
+  display: flex;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
+  min-width: 100%;
   justify-content: center;
+
 }
 .container_btn{
   display: flex;
   justify-content: center;
   position: absolute;
-  width: 100%;
+  min-width: 100%;
 }
 
 
@@ -146,6 +145,7 @@
   font-family: 'Rampart One', cursive;
   filter: opacity(0.9);
   transform: skew(2deg, 2deg);
-  padding: 20px;
-  text-align: center;
+  padding: 5px;
+  justify-content: center;
+  display: flex;
 }
