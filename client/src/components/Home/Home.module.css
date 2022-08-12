@@ -92,7 +92,8 @@
 
   
   .nav {
-    width: 80%;
+    width: 75%;
+    gap: 60px;
   }
    .paginated{
     width: 100%;

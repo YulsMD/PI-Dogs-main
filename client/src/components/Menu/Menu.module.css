@@ -144,7 +144,7 @@
   .container{
     flex-direction: row;
     width: 500px;
-    height: 200px;
+    height: 280px;
   }
   .refresh{
     width: 100px;

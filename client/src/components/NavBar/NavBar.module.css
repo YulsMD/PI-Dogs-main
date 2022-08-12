@@ -145,3 +145,12 @@
     justify-content: left;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .cont_btn {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+}
