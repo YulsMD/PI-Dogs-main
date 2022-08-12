@@ -2,14 +2,14 @@ import axios from "axios"
 
 export const getAllDogs = () =>{
 return function(dispatch){
-  axios.get('http://localhost:3001/dogs').then(response=>dispatch({
+  axios.get('/dogs').then(response=>dispatch({
     type: 'GET_ALL_DOGS', payload: response.data
   }))
 }}
 
 export const getAllTemperaments = () =>{
   return async function(dispatch){
-    var json = await axios.get('http://localhost:3001/temperaments')
+    var json = await axios.get('/temperaments')
     return dispatch({
       type: 'GET_ALL_TEMPERAMENTS',
         payload: json.data
@@ -18,7 +18,7 @@ export const getAllTemperaments = () =>{
 }
 export const getDetails = (id) =>{
     return async function(dispatch){
-      var json = await axios.get(`http://localhost:3001/dogs/${id}`)
+      var json = await axios.get(`/dogs/${id}`)
       return dispatch({
         type: 'GET_DOG_DETAILS',
           payload: json.data
@@ -29,7 +29,7 @@ export const getDetails = (id) =>{
 export const SearchDogByName = (name) =>{
   return async function(dispatch) {
     try {
-    const res = await axios.get(`http://localhost:3001/dogs?name=${name}`)
+    const res = await axios.get(`/dogs?name=${name}`)
     console.log(res.data)
     return dispatch ({
         type: 'GET_BY_NAME',
