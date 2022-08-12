@@ -4,8 +4,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: auto;
   position: relative;
+  height: 100%;
   width: 100%;
 }
 
@@ -15,7 +15,7 @@
   flex-direction: row;
   gap: 300px;
   justify-content: center;
-  height: 900px;
+  height:100%;
   align-items: center;
   width: 100%;
 }
@@ -111,16 +111,15 @@ display: -webkit-box;
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: -99999;
     transition: all .4s;
 }
 
 .container_front:hover::before .card_description::before{
   font-size: 10px;
   transition: all .4s;
-  -webkit-transform: translate(5%, 20%);
-  transform: translate(5%, 20%);
-  text-transform: translate(5%, 20%) ;
+  -webkit-transform: translate(0%, 20%);
+  transform: translate(0%, 20%);
+  text-transform: translate(0%, 10%) ;
 }
 .container_front:hover:after .card_description::after{
   transition: all .4s;
@@ -131,9 +130,9 @@ display: -webkit-box;
 }
 
  .container_front:hover .card_description {
- -webkit-transform: translate(5%, 20%);
-     transform: translate(5%, 20%);
-     text-transform: translate(5%, 20%) ;
+ -webkit-transform: translate(0%, 0%);
+     transform: translate(0%, 0%);
+     text-transform: translate(0%, 0%) ;
      font-size: 8px;
      width: 30%;
      height: 30%;
@@ -192,4 +191,67 @@ display: -webkit-box;
   align-items: center;
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width:1300px){
+  .container {
+    gap: 10px;
+  }
+  .container_f_b{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width:800px){
+  .container {
+    flex-direction: column;
+    height:auto;
+    align-items: center;
+    width: 100%;
+  }
+  .container_f_b{
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  .nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+  }
+
+  .container_front{
+    width: 400px;
+    height: 450px;
+  }
+  .divWeight p{
+    margin: 0px;
+    justify-content: center;
+    text-align: center;
+    height: 2px;
+  }
+  .divWeight{
+    font-family: 'Mouse Memoirs', sans-serif;
+    width: 100%;
+    height: 35px;
+    color: #81f0c5;
+    display: flex;
+    gap: 10px;
+    font-size: 10px;
+    justify-content: center;
+    font: bold;
+    height: 40px;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 100%;
+  }
 }

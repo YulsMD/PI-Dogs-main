@@ -130,3 +130,18 @@
   transition: none;
   transition-delay: none;
 }
+
+@media(max-width:1200px){
+  .container {
+    width: auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+  }
+  .cont_btn {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+}

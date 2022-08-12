@@ -49,6 +49,7 @@
 }
 .container{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
@@ -136,4 +137,33 @@
   color:#81f0c5;
   font-family: 'Mouse Memoirs', sans-serif;
   font-size: 16px;
+}
+
+
+@media screen and (max-width:1000px) {
+  .container{
+    flex-direction: row;
+    width: 500px;
+    height: 200px;
+  }
+  .refresh{
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #fec242c7;
+    z-index: 1;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 20px;
+}
+
+  .subcontainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .name2{
+    margin-top: 10px;
+  }
 }

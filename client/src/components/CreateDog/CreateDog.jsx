@@ -125,16 +125,18 @@ export default function CreateDog() {
           <div className={s.align_form}>
             <form onSubmit={handleSubmit} className={s.form}>
               <div className={s.container_first_row}>
-                <label className={s.label}>Name:</label>
-                <div className={s.container_inputs}>
-                  <input
-                    type="text"
-                    name="name"
-                    value={input.name}
-                    onChange={handleChange}
-                    className={s.inputs}
-                  />
-                  {<span className={s.span}>{errors.name}</span>}
+                <div className={s.container_name_input}>
+                  <label className={s.label}>Name:</label>
+                  <div className={s.container_inputs}>
+                    <input
+                      type="text"
+                      name="name"
+                      value={input.name}
+                      onChange={handleChange}
+                      className={s.inputs}
+                    />
+                    {<span className={s.span}>{errors.name}</span>}
+                  </div>
                 </div>
                 <div>
                   <button className={s.button} type="submit">
@@ -143,78 +145,91 @@ export default function CreateDog() {
                 </div>
               </div>
               <div className={s.container_first_row}>
-                <label className={s.label}>Weight min:</label>
-                <div className={s.container_inputs}>
-                  <input
-                    type="text"
-                    name="weight_min"
-                    value={input.weight_min}
-                    onChange={handleChange}
-                    className={s.inputs}
-                  />
-                  {<span className={s.span}>{errors.weight_min}</span>}
+                <div className={s.container_name_input}>
+                  <label className={s.label}>Weight min:</label>
+                  <div className={s.container_inputs}>
+                    <input
+                      type="text"
+                      name="weight_min"
+                      value={input.weight_min}
+                      onChange={handleChange}
+                      className={s.inputs}
+                    />
+                    {<span className={s.span}>{errors.weight_min}</span>}
+                  </div>
                 </div>
-                <label className={s.label}>Weight max:</label>
-                <div className={s.container_inputs}>
-                  <input
-                    type="text"
-                    name="weight_max"
-                    value={input.weight_max}
-                    onChange={handleChange}
-                    className={s.inputs}
-                  />
-                  {<span className={s.span}>{errors.weight_max}</span>}
-                </div>
-              </div>
-              <div className={s.container_first_row}>
-                <label className={s.label}>Height min:</label>
-                <div className={s.container_inputs}>
-                  <input
-                    type="text"
-                    name="height_min"
-                    value={input.height_min}
-                    onChange={handleChange}
-                    className={s.inputs}
-                  />
-                  {<span className={s.span}>{errors.height_min}</span>}
-                </div>
-                <label className={s.label}>Height max:</label>
-                <div className={s.container_inputs}>
-                  <input
-                    type="text"
-                    name="height_max"
-                    value={input.height_max}
-                    onChange={handleChange}
-                    className={s.inputs}
-                  />
-                  {<span className={s.span}>{errors.height_max}</span>}
+                <div className={s.container_name_input}>
+                  <label className={s.label}>Weight max:</label>
+                  <div className={s.container_inputs}>
+                    <input
+                      type="text"
+                      name="weight_max"
+                      value={input.weight_max}
+                      onChange={handleChange}
+                      className={s.inputs}
+                    />
+                    {<span className={s.span}>{errors.weight_max}</span>}
+                  </div>
                 </div>
               </div>
               <div className={s.container_first_row}>
-                <label className={s.label}>Life span min:</label>
-                <div className={s.container_inputs}>
-                  <input
-                    type="text"
-                    name="life_span_min"
-                    value={input.life_span_min}
-                    onChange={handleChange}
-                    className={s.inputs}
-                  />
-                  {<span className={s.span}>{errors.life_span_min}</span>}
+                <div className={s.container_name_input}>
+                  <label className={s.label}>Height min:</label>
+                  <div className={s.container_inputs}>
+                    <input
+                      type="text"
+                      name="height_min"
+                      value={input.height_min}
+                      onChange={handleChange}
+                      className={s.inputs}
+                    />
+                    {<span className={s.span}>{errors.height_min}</span>}
+                  </div>
                 </div>
-                <label className={s.label}>Life span max:</label>
-                <div className={s.container_inputs}>
-                  <input
-                    type="text"
-                    name="life_span_max"
-                    value={input.life_span_max}
-                    onChange={handleChange}
-                    className={s.inputs}
-                  />
-                  {<span className={s.span}>{errors.life_span_max}</span>}
+                <div className={s.container_name_input}>
+                  <label className={s.label}>Height max:</label>
+                  <div className={s.container_inputs}>
+                    <input
+                      type="text"
+                      name="height_max"
+                      value={input.height_max}
+                      onChange={handleChange}
+                      className={s.inputs}
+                    />
+                    {<span className={s.span}>{errors.height_max}</span>}
+                  </div>
                 </div>
               </div>
               <div className={s.container_first_row}>
+                <div className={s.container_name_input}>
+                  <label className={s.label}>Life span min:</label>
+                  <div className={s.container_inputs}>
+                    <input
+                      type="text"
+                      name="life_span_min"
+                      value={input.life_span_min}
+                      onChange={handleChange}
+                      className={s.inputs}
+                    />
+                    {<span className={s.span}>{errors.life_span_min}</span>}
+                  </div>
+                </div>
+                <div className={s.container_name_input}>
+                  <label className={s.label}>Life span max:</label>
+                  <div className={s.container_inputs}>
+                    <input
+                      type="text"
+                      name="life_span_max"
+                      value={input.life_span_max}
+                      onChange={handleChange}
+                      className={s.inputs}
+                    />
+                    {<span className={s.span}>{errors.life_span_max}</span>}
+                  </div>
+                </div>
+              </div>
+              <div className={s.container_first_row}>
+                <div className={s.container_name_input}>
                 <label className={s.label}>Image:</label>
                 <input
                   type="text"
@@ -223,6 +238,7 @@ export default function CreateDog() {
                   onChange={handleChange}
                   className={s.inputs}
                 />
+                </div>
                 <div className={s.container_images}>
                   <button
                     type="button"
@@ -245,6 +261,7 @@ export default function CreateDog() {
                 </div>
               </div>
               <div className={s.container_first_row}>
+                <div className={s.container_name_input}>
                 <label className={s.label}>Temperaments:</label>
                 <div>
                   <select onChange={handleTemperaments} className={s.select}>
@@ -257,6 +274,8 @@ export default function CreateDog() {
                     })}
                   </select>
                 </div>
+                </div>
+                
               </div>
               <div className={s.container_temps}>
                 {input.temperaments?.map((e) => (

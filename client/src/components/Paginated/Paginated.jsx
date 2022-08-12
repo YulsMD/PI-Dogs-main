@@ -7,7 +7,7 @@ export default function Paginated({ dogsPerPage, allDogs, paginated }) {
     pageNumbers.push(i + 1);
   }
   return (
-    <div>
+    <div className={s.div_container}>
       <ul className={s.container}>
         {pageNumbers?.map((num) => {
           return (
