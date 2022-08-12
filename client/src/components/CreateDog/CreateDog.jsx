@@ -11,7 +11,7 @@ import Dog_2_card from "../../images/Dog_2_card.jpg";
 import Dog_3_card from "../../images/Dog_3_card.jpg";
 import s from "../CreateDog/CreateDog.module.css";
 import Logo from "../../images/Home_Create.png";
-import validations from './validations'
+import validations from './validations.js'
 
 export default function CreateDog() {
   const allDogs = useSelector((state) => state.dogs);
