@@ -143,8 +143,8 @@
 @media screen and (max-width:1000px) {
   .container{
     flex-direction: row;
-    width: 500px;
-    height: 280px;
+    width: 450px;
+    height: 250px;
   }
   .refresh{
     width: 100px;
@@ -163,7 +163,20 @@
     flex-direction: row;
     gap: 10px;
   }
+  .name1{
+    font-size: 17px;
+    width: 100px;
+  }
   .name2{
     margin-top: 10px;
+    font-size: 17px;
+    width: 100px;
+  }
+  .select option{
+    font-size: 14px;
+  }
+  .select {
+    width: 100px;
+    font-size: 17px;
   }
 }

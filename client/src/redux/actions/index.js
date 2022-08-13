@@ -72,7 +72,7 @@ export function SortDogsAscDesc(payload){
 export function CreateNewDog(payload){
   return async function (dispatch) {
   try {
-      const res = await axios.post('http://localhost:3001/dogs/post', payload)
+      const res = await axios.post('/dogs/post', payload)
       console.log(res)
       return res
   } catch (error) {
